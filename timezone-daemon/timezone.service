@@ -1,0 +1,11 @@
+[Unit]
+Description=Daemon that sets timezone based on your geodata
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python /usr/local/bin/timezone.py
+
+[Install]
+WantedBy=multi-user.target
